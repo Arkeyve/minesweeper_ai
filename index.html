@@ -1,0 +1,65 @@
+<html>
+<head>
+	<title>Minesweeper</title>
+	<script type="text/javascript" src="./main.js"></script>
+	<style>
+	body {
+		background-color: #000;
+		text-align: center;
+	}
+
+	#wrapper {
+		text-align: center;
+	}
+
+	#field {
+		height: 750px;
+		width: 750px;
+		background-color: #000;
+		text-align: center;
+		margin: auto;
+	}
+
+	.cell {
+		border: 1px solid #000;
+		background-color: #fff;
+		font-size: 25px;
+		font-weight: 900;
+		font-family: monospace;
+		color: #ddd;
+	}
+
+	.cell[readonly] {
+		background-color: #ff0;
+	}
+
+	.cell[disabled] {
+		background-color: #333;
+	}
+
+	#timer {
+		background-color: #000;
+		color: #fff;
+		text-decoration: bold;
+		border: none;
+		width: 50px;
+		font-size: inherit;
+		font-family: monospace;
+	}
+
+	#timerboard {
+		text-align: center;
+		color: #fff;
+		font-size: 18px;
+	}
+	</style>
+</head>
+<body oncontextmenu="return false">
+	<div id="wrapper">
+		<div id="field"></div>
+	</div>
+	<div id="timerboard">
+        TIME: <input type="text" disabled="" value="0" id="timer"/>
+    </div>
+</body>
+</html>
