@@ -37,6 +37,11 @@ window.onload = function() {
 			cell.className = "cell";
 			cell.oncontextmenu = function() {
 				this.readOnly = !this.readOnly;
+				if(document.querySelectorAll(".cell[readonly]").length === mines) {
+					if((document.querySelectorAll(".cell[disabled]").length + document.querySelectorAll(".cell[readonly]").length) === (xCells * yCells)) {
+						end_game("w");
+					}
+				}
 			}
 			cell.onclick = function() {
 				if(!this.readOnly) {
@@ -46,10 +51,10 @@ window.onload = function() {
 					} else {
 						this.value = this.getAttribute("cell_value");
 					}
+					this.disabled = true;
 					if(((xCells * yCells) - document.querySelectorAll('.cell[disabled]').length) === mines) {
 						end_game("w");
 					}
-					this.disabled = true;
 				}
 			}
 
