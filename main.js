@@ -41,7 +41,6 @@ window.onload = function() {
 			cell.onclick = function() {
 				if(!this.readOnly) {
 					click_action(this);
-					this.disabled = true;
 					if(this.getAttribute("cell_value") == "-1") {
 						end_game("l");
 					} else {
@@ -50,6 +49,7 @@ window.onload = function() {
 					if(((xCells * yCells) - document.querySelectorAll('.cell[disabled]').length) === mines) {
 						end_game("w");
 					}
+					this.disabled = true;
 				}
 			}
 
