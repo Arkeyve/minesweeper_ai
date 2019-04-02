@@ -46,13 +46,15 @@ window.onload = function() {
 			cell.onclick = function() {
 				if(!this.readOnly) {
 					click_action(this);
+					var game_ended = false;
 					if(this.getAttribute("cell_value") == "-1") {
 						end_game("l");
+						game_ended = true;
 					} else {
 						this.value = this.getAttribute("cell_value");
 					}
 					this.disabled = true;
-					if(((xCells * yCells) - document.querySelectorAll('.cell[disabled]').length) === mines) {
+					if(!game_ended && (((xCells * yCells) - document.querySelectorAll('.cell[disabled]').length) === mines)) {
 						end_game("w");
 					}
 				}
