@@ -202,6 +202,7 @@ window.onload = function() {
 	function calc_likelihood() {
 		var all_disabled_cells = document.querySelectorAll(".cell[disabled]");
 		var counter = 0;
+		var clicked_once = false;
 		var max_len = all_disabled_cells.length;
 		if(max_len > 0) {
 			all_disabled_cells.forEach(function(cell) {
@@ -263,6 +264,7 @@ window.onload = function() {
 								if(!nbr_cell.disabled && !nbr_cell.readOnly) {
 									if(nbr_likelihood === 1) {
 										console.log("definite");
+										clicked_once = true;
 										nbr_cell.readOnly = true;
 									}
 									var lm_nbr = likelihood_matrix[nbr_pos[j].x][nbr_pos[j].y];
@@ -280,7 +282,7 @@ window.onload = function() {
 						}
 					}
 				}
-				if(counter == max_len) {
+				if((counter == max_len) && !clicked_once) {
 					click_cell();
 				}
 			});
