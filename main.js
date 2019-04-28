@@ -32,8 +32,8 @@ window.onload = function() {
 			cell.setAttribute("x", i);
 			cell.setAttribute("y", j);
 			cell.id = i + ":" + j;
-			cell.style.height = "50px";
-			cell.style.width = "50px";
+			cell.style.height = unit + "px";
+			cell.style.width = unit + "px";
 			cell.className = "cell";
 			cell.oncontextmenu = function() {
 				this.readOnly = !this.readOnly;
