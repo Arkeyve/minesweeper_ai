@@ -5,10 +5,10 @@ window.onload = function() {
 
 	var unit = 50;
 	var firstClick = true;
-	var xOffSet = field.getBoundingClientRect().left;
-	var yOffSet = field.getBoundingClientRect().top;
-	var xCells = field.getBoundingClientRect().width / unit;
-	var yCells = field.getBoundingClientRect().height / unit;
+	var xOffSet = Math.floor(field.getBoundingClientRect().left);
+	var yOffSet = Math.floor(field.getBoundingClientRect().top);
+	var xCells = Math.floor(field.getBoundingClientRect().width / unit);
+	var yCells = Math.floor(field.getBoundingClientRect().height / unit);
 	var timer, seconds = 0;
 
 	var mines_matrix = [];
